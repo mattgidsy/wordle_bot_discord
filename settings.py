@@ -21,3 +21,8 @@ try:
 except:
     print("GUILDS_ID was not found. Create .env file and declare your GUILDS_ID")
     print("remember to add .env to gitignore to keep your guild id off github")
+    
+try:
+    CHANNEL_ID = int(os.getenv("CHANNEL"))
+except:
+    print("CHANNEL_ID was not found. Create .env file and eclare your CHANNEL_ID")

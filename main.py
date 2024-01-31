@@ -1,3 +1,4 @@
+import time
 import settings
 import discord
 from discord import app_commands
@@ -10,13 +11,12 @@ def run():
  
     #create a dictionary to store multiple users 
     user_dict ={}
-   
+
     intents = discord.Intents.all()
     intents.message_content = True
     intents.members = True
     bot = commands.Bot(command_prefix= "!", intents=intents)
-    
-    
+
     # bot logging
     @bot.event
     async def on_ready():
@@ -25,8 +25,8 @@ def run():
         print(f"Bot Guild ID:{bot.guilds[0].id}")
         print("____________________")
         await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='/wordle'))
+        await bot.get_channel(settings.CHANNEL_ID).send("This station is bot operational. Type /wordle to use this wordle bot.")
 
-    @bot.tasks.loop()
     #when the bot is being rude    
     @bot.hybrid_command(
         help = "when the bot is being rude.",
@@ -119,3 +119,4 @@ def run():
     
 if __name__ == "__main__":
     run()
+
