@@ -14,11 +14,11 @@ def validate_guess_cl(user_input):
     else:
         return False
 
-def test():
-    guess = "slAte"
-    guess_cl = "A"
-    print(validate_guess(guess))
-    print(validate_guess_cl(guess_cl))
+# def test():
+#     guess = "slAte"
+#     guess_cl = "A"
+#     print(validate_guess(guess))
+#     print(validate_guess_cl(guess_cl))
     
     
 #test()

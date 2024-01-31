@@ -4,6 +4,7 @@ from discord import app_commands
 from discord.ext import commands
 from wordlefilter import *
 from validator import *
+from datetime import datetime
 
 def run():
  
@@ -25,7 +26,7 @@ def run():
         print("____________________")
         await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='/wordle'))
 
-    
+    @bot.tasks.loop()
     #when the bot is being rude    
     @bot.hybrid_command(
         help = "when the bot is being rude.",

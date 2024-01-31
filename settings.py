@@ -3,7 +3,21 @@ from dotenv import load_dotenv
 import discord
 
 
-load_dotenv()
+#Loads the .env file that contains DISCORD_API_SECRET and GUILDS_ID
+try:
+    load_dotenv()
+except:
+    print("dotenv environment was not found. pip install python-dotenv ")
 
-DISCORD_API_SECRET = os.getenv("DISCORD_API_TOKEN")
-GUILDS_ID = discord.Object(id=int(os.getenv("GUILD")))
+
+try:
+    DISCORD_API_SECRET = os.getenv("DISCORD_API_TOKEN")
+except:
+    print("DISCORD_API_SECRET was not found. Create .env file and declare your DISCORD_API_SECRET")
+    print("remember to add .env to gitignore to keep your keys off github")
+    
+try:
+    GUILDS_ID = discord.Object(id=int(os.getenv("GUILD")))
+except:
+    print("GUILDS_ID was not found. Create .env file and declare your GUILDS_ID")
+    print("remember to add .env to gitignore to keep your guild id off github")
