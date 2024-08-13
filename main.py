@@ -39,7 +39,7 @@ def run():
     @bot.hybrid_command(
         user_dict,
         aliases = ['w'],
-        help = "This is the Wordle Helper Bot",
+        help = "This is the Wordle Helper Bot", 
         description = "Type your guess: using CAPS for green letters, correct letters = yellow letters",
         brief = "This bot helps solve wordles"
         )
