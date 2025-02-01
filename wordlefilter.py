@@ -1,3 +1,4 @@
+
 class WordleUser:
     def __init__(self, user_id=None, name=None,  guess=None, guess_cl=None, filtered_list=None, word_list=None):
         if filtered_list is None:
@@ -17,6 +18,7 @@ class WordleUser:
         self.guess_cl = guess_cl
         self.filtered_list = filtered_list
         self.word_list = word_list
+
     
     #filter any words that do not contain all of the correct letters (this catches repeat letters)    
     def filter_all_correct(self) -> list:
@@ -155,6 +157,7 @@ class WordleUser:
             self.filtered_list = temp_possible_words
             
         return self.filtered_list
+
         
 def wordle_filter(player: WordleUser ) -> list:
     
@@ -163,8 +166,12 @@ def wordle_filter(player: WordleUser ) -> list:
     player.filter_excluded_letter()
     player.filter_incorrect_positions()
     player.filter_all_correct()
+
     
-    return player.filtered_list 
+    return player.filtered_list
+
+
+  
 
 def create_new_user(user_id):
     return WordleUser(user_id=user_id)

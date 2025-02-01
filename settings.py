@@ -11,8 +11,8 @@ except:
 
 
 try:
-     DISCORD_API_SECRET = os.getenv("DISCORD_API_TOKEN")
-    # DISCORD_API_SECRET = os.getenv("TEST_TOKEN")
+    #  DISCORD_API_SECRET = os.getenv("DISCORD_API_TOKEN")
+    DISCORD_API_SECRET = os.getenv("TEST_TOKEN")
 except:
     print("DISCORD_API_SECRET was not found. Create .env file and declare your DISCORD_API_SECRET")
     print("remember to add .env to gitignore to keep your keys off github")
